@@ -36,6 +36,10 @@ get '/' do
   send_file("html/index.html")
 end
 
+get '/camera_harness.html' do
+  send_file("html/camera_harness.html")
+end
+
 get '/js/:f' do
   send_file("html/js/#{params[:f]}")
 end

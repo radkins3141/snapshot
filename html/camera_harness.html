@@ -29,7 +29,7 @@
     <form id="take_snapshot_form" style="display:none">
       <input type="button" id="take_snapshot" value="Take Snapshot" onClick="ManageCamera.takeSnapshot()">
       <br /><br />
-      <span>Snapshot interval: </span><input type="text" id="snapshot_interval" onChange="ManageCamera.manageSettings.setSnapshotInterval()">
+      <span>Snapshot interval (in seconds): </span><input type="text" id="snapshot_interval" onChange="ManageCamera.manageSettings.setSnapshotInterval()">
     </form>
     <br />
     <div class="left_side">
@@ -43,9 +43,7 @@
       <br /><br />
     </div>
   </div>
-  <div>
   <div id="results" class="right_side" style="display: none;">Snapshot here...</div>
-  </div>
   <script language="JavaScript" src="/js/start_camera.js"></script>
 </body>
 </html>

@@ -3,3 +3,7 @@ installing_ruby_environment.txt
 server.crt
 server.key
 reset_repo.sh
+installing_ruby_environment.txt
+tmp/phone*
+tmp/pids/*
+tmp/sockets/*
