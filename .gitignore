@@ -1,0 +1,5 @@
+installing_ruby_environment.txt
+*.log
+server.crt
+server.key
+reset_repo.sh

@@ -1,0 +1,37 @@
+sudo apt-get update
+sudo apt-get upgrade
+# install basic dependencies for this project and possible future enhancements
+sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs
+#
+cd
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+exec $SHELL
+
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+exec $SHELL
+
+rbenv install 2.4.0
+rbenv global 2.4.0
+ruby -v
+
+gem install bundler
+rbenv rehash
+
+mkdir stuff_for_github
+cd stuff_for_github
+git config --global color.ui true
+git config --global user.name "Robert Adkins"
+git config --global user.email "radkins3141@gmail.com"
+ssh-keygen -t rsa -b 4096 -C "radkins3141@gmail.com"
+
+ssh -T git@github.com
+
+#
+
+cd /opt/snapshot/
+bundle install
+rbenv rehash
+unicorn -c ./unicorn.rb -E development
